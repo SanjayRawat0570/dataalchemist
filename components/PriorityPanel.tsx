@@ -1,22 +1,10 @@
 'use client';
-import { useState } from 'react';
-
-export function PriorityPanel({ onChange }: { onChange: (weights: any) => void }) {
-  const [priorityLevel, setPriorityLevel] = useState(5);
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function PriorityPanel({ onChange }: { onChange: (w: any) => void }) {
   return (
-    <div className="space-y-2">
-      <label className="block font-bold">Priority Level Weight: {priorityLevel}</label>
-      <input
-        type="range"
-        min={1}
-        max={10}
-        value={priorityLevel}
-        onChange={(e) => {
-          const val = Number(e.target.value);
-          setPriorityLevel(val);
-          onChange({ priorityLevel: val });
-        }}
-      />
+    <div className="p-4 border rounded shadow">
+      <h2 className="font-semibold mb-2">Priority Panel</h2>
+      {/* Your UI */}
     </div>
   );
 }

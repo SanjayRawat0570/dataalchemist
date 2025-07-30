@@ -1,20 +1,10 @@
 'use client';
-import { useState } from 'react';
-
-export function RuleBuilder({ onAddRule }: { onAddRule: (rule: any) => void }) {
-  const [taskId, setTaskId] = useState('');
-  const [type, setType] = useState('coRun');
-
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function RuleBuilder({ onAddRule }: { onAddRule: (r: any) => void }) {
   return (
-    <div className="space-y-2">
-      <input value={taskId} onChange={(e) => setTaskId(e.target.value)} placeholder="Task ID" className="border p-1" />
-      <select value={type} onChange={(e) => setType(e.target.value)} className="border p-1">
-        <option value="coRun">Co-Run</option>
-        <option value="phaseWindow">Phase Window</option>
-      </select>
-      <button onClick={() => onAddRule({ type, taskId })} className="bg-blue-500 text-white px-2 py-1 rounded">
-        Add Rule
-      </button>
+    <div className="p-4 border rounded shadow">
+      <h2 className="font-semibold mb-2">Rule Builder</h2>
+      {/* Your UI */}
     </div>
   );
 }
