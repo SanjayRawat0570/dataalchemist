@@ -1,0 +1,3 @@
+ClientID,ClientName,PriorityLevel,RequestedTaskIDs,GroupTag,AttributesJSON
+C1,Alice,5,T1,TG1,"{\"region\":\"north\"}"
+C2,Bob,3,T2,TG2,"{\"region\":\"south\"}"
