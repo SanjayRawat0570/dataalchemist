@@ -17,9 +17,24 @@ const DataGridView = dynamic(() => import('../components/DataGridView'), {
 
 
 export default function HomePage() {
-  const [data, setData] = useState<any>({ clients: [], workers: [], tasks: [] });
+  type DataType = {
+    clients: Record<string, unknown>[];
+    workers: Record<string, unknown>[];
+    tasks: Record<string, unknown>[];
+  };
+  const [data, setData] = useState<DataType>({ clients: [], workers: [], tasks: [] });
   const [errors, setErrors] = useState<string[]>([]);
-  const [rules, setRules] = useState<any[]>([]);
+  // Define a Rule type or import it if already defined elsewhere
+  type Rule = {
+    // Add appropriate fields for your rule structure
+    // For example:
+    id: string;
+    name: string;
+    condition: string;
+    // Add more fields as needed
+  };
+
+  const [rules, setRules] = useState<Rule[]>([]);
 
   const handleFile = async (file: File) => {
     const parsed = await parseFile(file);
